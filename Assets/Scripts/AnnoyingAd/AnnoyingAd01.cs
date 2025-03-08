@@ -1,8 +1,6 @@
 using UnityEngine;
-using MoreMountains.CorgiEngine;
-using MoreMountains.Tools;
-using UnityEngine.SceneManagement;
-using MoreMountains.Feedbacks;
+using System.Collections;
+
 public class AnnoyingAd01 : MonoBehaviour
 {
     public string SceneNameToTransition;
@@ -11,6 +9,6 @@ public class AnnoyingAd01 : MonoBehaviour
 
     public void LoadRelatedScene()
     {
-        SceneLoaderObject.LoadRelatedScene(SceneNameToTransition);
+        //SceneLoaderObject.LoadRelatedScene(SceneNameToTransition);
     }
 }

@@ -49,4 +49,8 @@ public class PlatformSpawner : TimedSpawner
         nextindex++;
         return offset;
     }
+    public void ResetIndex()
+    {
+        nextindex = 0;
+    }
 }

@@ -49,4 +49,8 @@ public class BackGroundSpawner : TimedSpawner
         nextindex++;
         return offset;
     }
+    public void ResetIndex()
+    {
+        nextindex = 0;
+    }
 }

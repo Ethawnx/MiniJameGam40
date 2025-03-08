@@ -11,7 +11,6 @@ namespace MoreMountains.Tools
 		/// whether or not this singleton already has an instance 
 		public static bool HasInstance => _instance != null;
 		public static T Current => _instance;
-		
 		protected static T _instance;
 		
 		/// the timestamp at which this singleton got initialized

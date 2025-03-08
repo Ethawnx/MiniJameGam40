@@ -52,4 +52,8 @@ public class ObstaclePlatformeSpawner : TimedSpawner
         Vector3 Offset = new(Xoffset.x, Yoffset.y, 0f);
         return Offset;
     }
+    public void ResetIndex()
+    {
+        nextindex = 0;
+    }
 }

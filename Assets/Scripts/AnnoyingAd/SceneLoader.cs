@@ -8,15 +8,22 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     public GameObject eventSystem;
-    public void LoadRelatedScene(string scene)
+    public string _scene;
+    public void LoadRelatedScene()
     {
         eventSystem.SetActive(false);
         MMTimeManager.Instance.SetTimeScaleTo(0f);
-        SceneManager.LoadScene(scene, LoadSceneMode.Additive);
+        SceneManager.LoadScene(_scene, LoadSceneMode.Additive);
     }
-    public void UnloadRelatedScene(string scene)
+    public void UnloadRelatedScene()
     {
+        GameObject[] persistentObjects = GameObject.FindGameObjectsWithTag("Persistent");
+        foreach (GameObject obj in persistentObjects)
+        {
+            Destroy(obj);
+        }
+        SceneManager.UnloadSceneAsync(_scene);
+        eventSystem.SetActive(true);
         MMTimeManager.Instance.SetTimeScaleTo(MMTimeManager.Instance.NormalTimeScale);
-        SceneManager.UnloadSceneAsync(scene);
     }
 }
