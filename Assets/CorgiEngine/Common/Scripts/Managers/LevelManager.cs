@@ -46,7 +46,7 @@ namespace MoreMountains.CorgiEngine
 	/// Spawns the player, handles checkpoints and respawn
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Managers/Level Manager")]
-	public class LevelManager : MMSingleton<LevelManager>, MMEventListener<CorgiEngineEvent>
+	public class LevelManager : MMPersistentHumbleSingleton<LevelManager>, MMEventListener<CorgiEngineEvent>
 	{
 		/// the possible checkpoint axis
 		public enum CheckpointsAxis { x, y, z, CheckpointOrder}

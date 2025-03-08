@@ -39,7 +39,7 @@ namespace MoreMountains.CorgiEngine
 	/// See https://docs.unity3d.com/Manual/class-ScriptExecution.html for more details
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Managers/Input Manager")]
-	public class InputManager : MMSingleton<InputManager>
+	public class InputManager : MMPersistentHumbleSingleton<InputManager>
 	{
 		[Header("Settings")]
 

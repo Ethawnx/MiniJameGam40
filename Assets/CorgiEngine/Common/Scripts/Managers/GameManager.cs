@@ -149,7 +149,7 @@ namespace MoreMountains.CorgiEngine
 	/// The game manager is a persistent singleton that handles points and time
 	/// </summary>
 	[AddComponentMenu("Corgi Engine/Managers/Game Manager")]
-	public class GameManager : 	MMPersistentSingleton<GameManager>, 
+	public class GameManager : 	MMPersistentHumbleSingleton<GameManager>, 
 		MMEventListener<MMGameEvent>, 
 		MMEventListener<CorgiEngineEvent>, 
 		MMEventListener<CorgiEnginePointsEvent>
