@@ -67,8 +67,8 @@ public class OutsideWorldGameManager : GameManager
     private void IncreaseGameDifficulty()
     {
         currentGameDifficultyIndex++;
-        _skyScroll.speed ++;
-        _cityScroll.speed ++;
+        _skyScroll.speed *= 1.25f;
+        _cityScroll.speed *= 1.25f;
         _obstaclePlatformeSpawner.XoffsetToAdd--;
     }
     
