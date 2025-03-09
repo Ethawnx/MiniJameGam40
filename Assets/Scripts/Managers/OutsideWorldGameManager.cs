@@ -13,7 +13,7 @@ public class OutsideWorldGameManager : GameManager
     //Our Current Game Difficulty With 0 Index;
     private int currentGameDifficultyIndex;
 
-    private float timePassedSinceStart = -1f;
+    private float timePassedSinceStart = 0f;
     private float timeCounter;
 
     private ObstaclePlatformeSpawner _obstaclePlatformeSpawner;
@@ -26,6 +26,7 @@ public class OutsideWorldGameManager : GameManager
     private float defaultObstaclePlatformValue;
     private float defaultPlatformValue;
 
+    public GUIManager GUIManager;
     
     protected override void Start()
     {
@@ -43,6 +44,7 @@ public class OutsideWorldGameManager : GameManager
     private void Update()
     {
         timePassedSinceStart += Time.deltaTime;
+        GUIManager.PointsText.text = $"{timePassedSinceStart}";
         timeCounter += Time.deltaTime;
         if (timeCounter >= IncrementGameDifficultyTime)
         {
@@ -59,6 +61,7 @@ public class OutsideWorldGameManager : GameManager
     public override void ResetGameValues()
     {
         timeCounter = 0f;
+        timePassedSinceStart = 0f;
         currentGameDifficultyIndex = 0;
         _skyScroll.speed = defaultSkyScrollValue;
         _cityScroll.speed = defaultCityScrollValue;
