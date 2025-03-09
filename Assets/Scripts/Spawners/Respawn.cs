@@ -17,6 +17,7 @@ public class Respawn : AutoRespawn
     public override void OnPlayerRespawn(CheckPoint checkpoint, Character player)
     {
         base.OnPlayerRespawn(checkpoint, player);
+        OutsideWorldGameManager.Instance.ResetGameValues();
         if (platformSpawner != null)
         {
             platformSpawner.ResetIndex();

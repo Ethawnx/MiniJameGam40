@@ -582,5 +582,10 @@ namespace MoreMountains.CorgiEngine
 			this.MMEventStopListening<CorgiEngineEvent> ();
 			this.MMEventStopListening<CorgiEnginePointsEvent> ();
 		}
-	}
+
+        public virtual void ResetGameValues()
+        {
+            
+        }
+    }
 }

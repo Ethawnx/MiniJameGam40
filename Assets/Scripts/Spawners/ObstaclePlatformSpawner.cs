@@ -6,9 +6,15 @@ using UnityEngine;
 public class ObstaclePlatformeSpawner : TimedSpawner
 {
     protected int nextindex = 0;
-    public float addedXOffset = 24f;
-    public float min_addedYOffset = 0f;
-    public float max_addedYOffset = 2f;
+    [SerializeField]
+    private float _XoffsetToAdd = 24f;
+    public float min_AddableXOffset = 5f;
+    public float XoffsetToAdd
+    {
+        get { return _XoffsetToAdd; }
+        set { _XoffsetToAdd = Mathf.Max(value, min_AddableXOffset); }
+    }
+    public float[] AddedYOffsets = { -3.6f, -1.8f, 0f };
     protected override void Start()
     {
         base.Start();
@@ -45,8 +51,8 @@ public class ObstaclePlatformeSpawner : TimedSpawner
 
     private Vector3 DetermineNextPosition()
     {
-        float RandomYValue = UnityEngine.Random.Range(min_addedYOffset, max_addedYOffset);
-        Vector3 Xoffset = new(addedXOffset * nextindex, 0f, 0f);
+        float RandomYValue = UnityEngine.Random.Range(0f, AddedYOffsets.Length);
+        Vector3 Xoffset = new(XoffsetToAdd * nextindex, 0f, 0f);
         Vector3 Yoffset = new(0f, RandomYValue, 0f);
         nextindex++;
         Vector3 Offset = new(Xoffset.x, Yoffset.y, 0f);
