@@ -30,6 +30,8 @@ public class OutsideWorldGameManager : GameManager
     private float ObsplatformSpawnerMinFrequencyDefaultValue;
     private float ObsplatformSpawnerMaxFrequencyDefaultValue;
 
+
+
     public GUIManager GUIManager;
 
     protected override void Start()
@@ -57,7 +59,7 @@ public class OutsideWorldGameManager : GameManager
         timeCounter += Time.deltaTime;
         if (timeCounter >= IncrementGameDifficultyTime)
         {
-            //IncrementGameDifficultyTime += 2f;
+            IncrementGameDifficultyTime += 2f;
             IncreaseGameDifficulty();
             timeCounter = 0f;
         }
