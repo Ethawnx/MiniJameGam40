@@ -2,6 +2,7 @@ using MoreMountains.CorgiEngine;
 using MoreMountains.Tools;
 using System;
 using UnityEngine;
+using Random = System.Random;
 
 public class ObstaclePlatformeSpawner : TimedSpawner
 {
@@ -51,7 +52,11 @@ public class ObstaclePlatformeSpawner : TimedSpawner
 
     private Vector3 DetermineNextPosition()
     {
-        float RandomYValue = UnityEngine.Random.Range(0f, AddedYOffsets.Length);
+        Random random = new Random();
+        float RandomYValue = AddedYOffsets[random.Next(AddedYOffsets.Length)];
+        
+        Debug.Log($"random y: {RandomYValue}");
+        
         Vector3 Xoffset = new(XoffsetToAdd * nextindex, 0f, 0f);
         Vector3 Yoffset = new(0f, RandomYValue, 0f);
         nextindex++;

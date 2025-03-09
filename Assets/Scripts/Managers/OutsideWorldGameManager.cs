@@ -51,9 +51,9 @@ public class OutsideWorldGameManager : GameManager
             timeCounter = 0f;
         }
             
-        Debug.Log("timePassedSinceStart: " + timePassedSinceStart);
-        Debug.Log("IncrementGameDifficultyTime: " + IncrementGameDifficultyTime);
-        Debug.Log("currentGameDifficultyIndex: " + currentGameDifficultyIndex);
+        // Debug.Log("timePassedSinceStart: " + timePassedSinceStart);
+        // Debug.Log("IncrementGameDifficultyTime: " + IncrementGameDifficultyTime);
+        // Debug.Log("currentGameDifficultyIndex: " + currentGameDifficultyIndex);
 
     }
     public override void ResetGameValues()
