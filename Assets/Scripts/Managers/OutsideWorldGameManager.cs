@@ -13,7 +13,7 @@ public class OutsideWorldGameManager : GameManager
     //Our Current Game Difficulty With 0 Index;
     private int currentGameDifficultyIndex;
 
-    private float timePassedSinceStart = 0f;
+    private float timePassedSinceStart = -1f;
     private float timeCounter;
 
     private ObstaclePlatformeSpawner _obstaclePlatformeSpawner;
@@ -25,9 +25,13 @@ public class OutsideWorldGameManager : GameManager
     private float defaultSkyScrollValue;
     private float defaultObstaclePlatformValue;
     private float defaultPlatformValue;
+    private float platformSpawnerMinFrequencyDefaultValue;
+    private float platformSpawnerMaxFrequencyDefaultValue;
+    private float ObsplatformSpawnerMinFrequencyDefaultValue;
+    private float ObsplatformSpawnerMaxFrequencyDefaultValue;
 
-    public GUIManager GUIManager;
-    
+
+
     protected override void Start()
     {
         base.Start();
@@ -40,11 +44,15 @@ public class OutsideWorldGameManager : GameManager
         defaultSkyScrollValue = _skyScroll.speed;
         defaultCityScrollValue = _cityScroll.speed;
         defaultObstaclePlatformValue = _obstaclePlatformeSpawner.XoffsetToAdd;
+
+        platformSpawnerMinFrequencyDefaultValue = _platformSpawner.MinFrequency;
+        platformSpawnerMaxFrequencyDefaultValue = _platformSpawner.MaxFrequency;
+        ObsplatformSpawnerMinFrequencyDefaultValue = _obstaclePlatformeSpawner.MinFrequency;
+        ObsplatformSpawnerMaxFrequencyDefaultValue = _obstaclePlatformeSpawner.MaxFrequency;
     }
     private void Update()
     {
         timePassedSinceStart += Time.deltaTime;
-        GUIManager.PointsText.text = $"{timePassedSinceStart}";
         timeCounter += Time.deltaTime;
         if (timeCounter >= IncrementGameDifficultyTime)
         {
@@ -61,14 +69,39 @@ public class OutsideWorldGameManager : GameManager
     public override void ResetGameValues()
     {
         timeCounter = 0f;
-        timePassedSinceStart = 0f;
         currentGameDifficultyIndex = 0;
         _skyScroll.speed = defaultSkyScrollValue;
         _cityScroll.speed = defaultCityScrollValue;
         _obstaclePlatformeSpawner.XoffsetToAdd = defaultObstaclePlatformValue;
+        _platformSpawner.MinFrequency = platformSpawnerMinFrequencyDefaultValue;
+        _platformSpawner.MaxFrequency = platformSpawnerMaxFrequencyDefaultValue;
+        _obstaclePlatformeSpawner.MinFrequency = ObsplatformSpawnerMinFrequencyDefaultValue;
+        _obstaclePlatformeSpawner.MaxFrequency = ObsplatformSpawnerMaxFrequencyDefaultValue;
     }
     private void IncreaseGameDifficulty()
     {
+        if (_platformSpawner.MinFrequency <= 1f && _platformSpawner.MaxFrequency <= 1f)
+        {
+            _platformSpawner.MinFrequency = 0.1f;
+            _platformSpawner.MaxFrequency = 0.1f;
+        }
+        else
+        {
+            _platformSpawner.MinFrequency -= 0.1f;
+            _platformSpawner.MaxFrequency -= 0.1f;
+        }
+
+        if (_obstaclePlatformeSpawner.MinFrequency <= 2f && _obstaclePlatformeSpawner.MaxFrequency <= 2f)
+        {
+            _obstaclePlatformeSpawner.MinFrequency = 2f;
+            _obstaclePlatformeSpawner.MaxFrequency = 2f;
+        }
+        else
+        {
+            _obstaclePlatformeSpawner.MinFrequency -= 0.2f;
+            _obstaclePlatformeSpawner.MaxFrequency -= 0.2f;
+        }
+        
         currentGameDifficultyIndex++;
         _skyScroll.speed *= 1.25f;
         _cityScroll.speed *= 1.25f;

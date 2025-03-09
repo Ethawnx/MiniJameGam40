@@ -341,7 +341,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			if (LevelText!= null)
 			{ 
-				LevelText.text="";
+				LevelText.text=name;
 			}
 		}
 
@@ -351,7 +351,7 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="levelNameEvent"></param>
 		public virtual void OnMMEvent(LevelNameEvent levelNameEvent)
 		{
-			SetLevelName("");
+			SetLevelName(levelNameEvent.LevelName);
 		}
 
 		public virtual void OnMMEvent(ControlsModeEvent controlsModeEvent)
