@@ -820,7 +820,7 @@ MonoBehaviour:
   SpawnerGameObject: {fileID: 162771642}
   CityBackGroundObject: {fileID: 2120109018687177069}
   SkyBackGroundObject: {fileID: 1510040999}
-  IncrementGameDifficultyTime: 20
+  IncrementGameDifficultyTime: 10
   GUIManager: {fileID: 1340858410}
 --- !u!1 &1090815137
 GameObject:
@@ -2530,7 +2530,7 @@ PrefabInstance:
     - target: {fileID: 4082261385096674541, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4082261385096674541, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
@@ -2610,7 +2610,7 @@ PrefabInstance:
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
       propertyPath: Pool.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
@@ -2655,12 +2655,12 @@ PrefabInstance:
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
       propertyPath: Pool.Array.data[3].PoolSize
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
       propertyPath: Pool.Array.data[4].PoolSize
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
@@ -2680,7 +2680,12 @@ PrefabInstance:
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
       propertyPath: Pool.Array.data[3].PoolCanExpand
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
+        type: 3}
+      propertyPath: Pool.Array.data[4].PoolCanExpand
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
@@ -2698,19 +2703,19 @@ PrefabInstance:
         type: 3}
       propertyPath: Pool.Array.data[2].GameObjectToPool
       value: 
-      objectReference: {fileID: 1614669727298556848, guid: 2b57ced26e59c8d4e8c813dd9ca03e86,
+      objectReference: {fileID: 1614669727298556848, guid: 8b35214d46896b448baa6c58593885f9,
         type: 3}
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
       propertyPath: Pool.Array.data[3].GameObjectToPool
       value: 
-      objectReference: {fileID: 1614669727298556848, guid: 8b35214d46896b448baa6c58593885f9,
+      objectReference: {fileID: 1614669727298556848, guid: 7e9ad9a84c0f5dc4ca890e58e574e607,
         type: 3}
     - target: {fileID: 6193892537747180185, guid: c9f38abf29e168f49b969a1873ce2e06,
         type: 3}
       propertyPath: Pool.Array.data[4].GameObjectToPool
       value: 
-      objectReference: {fileID: 1614669727298556848, guid: 2b57ced26e59c8d4e8c813dd9ca03e86,
+      objectReference: {fileID: 1614669727298556848, guid: a7c4323ea16e8b54e925817c1850b311,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

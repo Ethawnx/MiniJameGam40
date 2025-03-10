@@ -111,7 +111,7 @@ namespace MoreMountains.CorgiEngine
 			}
 			if (LevelText!= null)
 			{ 
-				LevelText.enabled = state;
+				LevelText.enabled = false;
 			}
 		}
 
@@ -341,7 +341,7 @@ namespace MoreMountains.CorgiEngine
 		{
 			if (LevelText!= null)
 			{ 
-				LevelText.text=name;
+				LevelText.text="";
 			}
 		}
 
@@ -351,7 +351,7 @@ namespace MoreMountains.CorgiEngine
 		/// <param name="levelNameEvent"></param>
 		public virtual void OnMMEvent(LevelNameEvent levelNameEvent)
 		{
-			SetLevelName(levelNameEvent.LevelName);
+			SetLevelName("");
 		}
 
 		public virtual void OnMMEvent(ControlsModeEvent controlsModeEvent)
